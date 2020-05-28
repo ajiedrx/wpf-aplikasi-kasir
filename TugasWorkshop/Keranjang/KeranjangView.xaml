@@ -1,0 +1,35 @@
+﻿<Window x:Class="TugasWorkshop.Keranjang.KeranjangView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TugasWorkshop.Keranjang"
+        mc:Ignorable="d"
+        Title="Keranjang" Height="352.217" Width="433.776">
+    <Grid>
+        <Button Name="tambah_btn" Content="Tambah" HorizontalAlignment="Left" Margin="330,43,0,0" VerticalAlignment="Top" Width="86" Click="onClickTambahBtn"/>
+        <Button Name="hapus_btn" Content="Hapus" HorizontalAlignment="Left" Margin="330,68,0,0" VerticalAlignment="Top" Width="86" Click="hapus_btn_Click"/>
+        <DataGrid Name="keranjang_dg" ItemsSource="{Binding}" HorizontalAlignment="Center" Height="Auto" AutoGenerateColumns="False" ColumnWidth="*" HorizontalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="10,43,101,0" VerticalAlignment="Top" Width="315">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                    <Setter Property="BorderThickness" Value="0,0,1,1"></Setter>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No" Binding="{Binding nomor}" Width="SizeToHeader" MinWidth="24"/>
+                <DataGridTextColumn Header="Nama produk" Binding="{Binding namaProduk}" MinWidth="108" Width="SizeToCells"  />
+                <DataGridTextColumn Header="QTY" Binding="{Binding jumlah}" MinWidth="24" Width="SizeToHeader"  />
+                <DataGridTextColumn Header="Harga" Binding="{Binding subtotal}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="bayar_btn" Content="Bayar" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="406" Height="32" Click="bayar_btn_Click"/>
+        <Button Name="batal_btn" Content="Batal" HorizontalAlignment="Left" Margin="10,279,0,0" VerticalAlignment="Top" Width="406" Height="32" Click="batal_btn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="162,205,0,0" TextWrapping="Wrap" Text="TOTAL" VerticalAlignment="Top"/>
+        <TextBlock Name="total_tb" HorizontalAlignment="Left" Margin="207,205,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.228,0.779" Width="118"/>
+        <TextBlock HorizontalAlignment="Left" Margin="256,10,0,0" TextWrapping="Wrap" Text="PELANGGAN" VerticalAlignment="Top"/>
+        <TextBlock Name="namaPelanggan_tb" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="331,10,0,0" Width="85" Height="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TANGGAL" VerticalAlignment="Top"/>
+        <TextBlock Name="dateTime_tb" HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="DATETIME" VerticalAlignment="Top" Width="109"/>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="TugasWorkshop.RecordTransaksi.RekapTransaksiView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TugasWorkshop.RecordTransaksi"
+        mc:Ignorable="d"
+        Title="Rekap Transaksi" Height="235.193" Width="419.436"
+        >
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button Name="transaksiBaru_btn" Content="Transaksi Baru" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="86" Click="transaksiBaru_btn_Click"/>
+        <Button Name="keluar_btn" Content="Keluar" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" Width="86" Click="keluar_btn_Click"/>
+        <DataGrid Name="tabelRekap_dg" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="Auto" AutoGenerateColumns="False" ColumnWidth="*" HorizontalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="10,43,9,0" VerticalAlignment="Top" Width="Auto">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                    <Setter Property="BorderThickness" Value="0,0,1,1"></Setter>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No" Binding="{Binding nomor}" Width="SizeToHeader" MinWidth="24"/>
+                <DataGridTextColumn Header="Tanggal Transaksi" Binding="{Binding tanggalTransaksi}" MinWidth="108" Width="SizeToCells"  />
+                <DataGridTextColumn Header="Nama Pelanggan" Binding="{Binding pelanggan.username}" Width="SizeToHeader" MinWidth="72"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding totalTransaksi}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

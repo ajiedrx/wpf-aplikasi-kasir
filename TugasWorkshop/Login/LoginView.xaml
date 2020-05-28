@@ -1,0 +1,24 @@
+﻿<Window x:Class="TugasWorkshop.Login.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TugasWorkshop.Login"
+        mc:Ignorable="d"
+        Title="PERUSAHAAN AJIE" Height="320" Width="420">
+    <Grid HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="420" />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="0,58,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,127,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <TextBox x:Name="username_tb" HorizontalAlignment="Center" Height="23" Margin="0,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="password_tb" HorizontalAlignment="Center" Height="23" Margin="0,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="login_btn" Content="Login" HorizontalAlignment="Center" Margin="0,195,0,104" Width="78" Height="21" Click="onClickLogin_btn"/>
+        <Button Name="register_btn" Content="Register" HorizontalAlignment="Left" Margin="335,259,0,0" VerticalAlignment="Top" Width="75" Click="register_btn_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,29,0,0" Text="PT. INDOMAKMUR GUNA BANGSA" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
